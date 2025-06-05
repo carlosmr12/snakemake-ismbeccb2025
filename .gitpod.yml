@@ -10,6 +10,7 @@ tasks:
       conda init
       source ~/.bashrc
       clear
+      conda env update -n snakemake-tutorial -f environment.yaml
       conda activate snakemake-tutorial
 
 vscode:
