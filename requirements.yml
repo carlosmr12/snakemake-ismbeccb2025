@@ -1,0 +1,20 @@
+name: tutorial
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - bcftools=1.19
+  - bwa=0.7.17
+  - graphviz=9.0.0
+  - jinja2
+  - markupsafe=2.1.5
+  - matplotlib
+  - pip
+  - pygments
+  - python=3.12.2
+  - requests
+  - samtools=1.19.2
+  - snakemake-minimal=8.5.3
+  - pip:
+      - pysam==0.22.0
