@@ -1,7 +1,7 @@
 from snakemake.io import glob_wildcards
 
 # Dynamically determine the list of samples from the reads files
-SAMPLES, = glob_wildcards("reads/{sample}.fasta")
+SAMPLES, = glob_wildcards("../reads/{sample}.fasta")
 
 rule all:
     input:
@@ -18,7 +18,7 @@ rule index_reference:
 rule align_reads:
     input:
         index_done="reference.index.done",
-        reads="reads/{sample}.fasta"
+        reads="../reads/{sample}.fasta"
     output:
         "alignment_{sample}.sam"
     threads: 4
