@@ -15,3 +15,5 @@ dependencies:
     #  a lower python version than snakemake, install pysam
     #  using pip
     - pysam ==0.22
+    - scikit-learn==1.6.1
+    - pandas==2.2.3

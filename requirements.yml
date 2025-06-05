@@ -18,3 +18,5 @@ dependencies:
   - snakemake-minimal=8.5.3
   - pip:
       - pysam==0.22.0
+      - scikit-learn==1.6.1
+      - pandas==2.2.3
