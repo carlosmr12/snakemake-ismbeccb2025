@@ -15,7 +15,7 @@ rule index_reference:
 rule align_reads:
     input:
         index_done="reference.index.done",
-        reads="reads.fastq"
+        reads="reads.fasta"
     output:
         "alignment.sam"
     shell:
