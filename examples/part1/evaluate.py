@@ -4,7 +4,8 @@ from sklearn.metrics import accuracy_score
 import joblib
 
 df = pd.read_csv(snakemake.input.data)
-X = df.drop('target', axis=1)
+# Exclude non-numeric 'species' column
+X = df.drop(['target', 'species'], axis=1)
 y = df['target']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 model = joblib.load(snakemake.input.model)
