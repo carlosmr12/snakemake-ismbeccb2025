@@ -1,14 +1,28 @@
-# ML workflow
+# Bioinformatics workflow
 
-## Exercise 1: Add a data splitting rule (train, validation,test)
+## Exercise 1: Add filtering step
 
 - **input**: alignment.sorted.bam
 ```
-split_data.py validation=0.2 test=0.1
+samtools view -q 20 -b {input} > {output}
 ```
 
-Challenge: Add proportion for each dataset as configurable parameters
+Challenge: Add quality filtering and make the threshold configurable
 
 ```
-split_data.py validation={params.validation} test={params.validation}
+samtools view -q {params.quality_threshold} -b {input} > {output}
+```
+
+## Exercise 2: Generate Summary Statistics (can these run in parallel?)
+
+- **input**: alignment.sorted.bam
+
+```
+samtools flagstat {input} > {output}
+```
+
+Variation:
+
+```
+samtools view -q {params.quality_threshold} -b {input} > {output}
 ```
