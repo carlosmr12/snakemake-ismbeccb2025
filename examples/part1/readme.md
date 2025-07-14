@@ -20,9 +20,3 @@ samtools view -q {params.quality_threshold} -b {input} > {output}
 ```
 samtools flagstat {input} > {output}
 ```
-
-Variation:
-
-```
-samtools view -q {params.quality_threshold} -b {input} > {output}
-```
