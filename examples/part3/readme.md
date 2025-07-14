@@ -9,3 +9,5 @@ Sample: sample2, Mapped Reads: 67890
 ....
 
 ```
+
+Tip: Use the `gen_summary.py` script.
