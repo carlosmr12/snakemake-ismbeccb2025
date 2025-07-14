@@ -4,9 +4,9 @@ from snakemake.io import glob_wildcards
 SAMPLES, = glob_wildcards("../reads/{sample}.fasta")
 
 # Define the subworkflow for indexing the reference genome
-subworkflow index_workflow:
+module index_workflow:
     workdir:
-        "index_dir"
+        "output"
     snakefile:
         "index_workflow.smk"
 
@@ -15,4 +15,5 @@ include: "rules.smk"
 
 rule all:
     input:
+        "output/reference.index.done",
         expand("mapped_reads_{sample}.txt", sample=SAMPLES)

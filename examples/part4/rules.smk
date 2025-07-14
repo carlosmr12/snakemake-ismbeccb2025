@@ -1,12 +1,22 @@
+rule index_reference:
+    input:
+        "output/reference.fasta"
+    output:
+        "output/reference.index.done"
+    log:
+        "logs/index_reference.log"
+    shell:
+        "bwa index {input} && touch {output}"
+
 rule align_reads:
     input:
-        index_done="index_dir/reference.index.done",
+        index_done="output/reference.index.done",
         reads="../reads/{sample}.fasta"
     output:
         "alignment_{sample}.sam"
     threads: 4
     shell:
-        "bwa mem index_dir/reference.fasta {input.reads} > {output}"
+        "bwa mem output/reference.fasta {input.reads} > {output}"
 
 rule sort_alignment:
     input:
