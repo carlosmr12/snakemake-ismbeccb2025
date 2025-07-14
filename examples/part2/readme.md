@@ -1,14 +1,10 @@
 # ML workflow
 
-## Exercise 1: Add a data splitting rule (train, validation,test)
+## Exercise 1: Add a data splitting rule (train, test)
 
-- **input**: alignment.sorted.bam
+- **input**: iris\_preprocessed.csv
 ```
-split_data.py validation=0.2 test=0.1
+split_data.py
 ```
 
 Challenge: Add proportion for each dataset as configurable parameters
-
-```
-split_data.py validation={params.validation} test={params.validation}
-```
